@@ -5,7 +5,7 @@ function crearLista (){ //boton con evento click para cear lista
 		//funcion que despliega campos
 		var divTexto = document.createElement("textarea");//crear caja de texto
 		divTexto.setAttribute("id", "ingresaLista");//crear id de caja de texto
-		divTexto.setAttribute("placeholder", "Agregar lista");//agregar atributo placehoder
+		divTexto.setAttribute("placeholder", "Añadir lista...");//agregar atributo placehoder
 		document.getElementById("mostrar-lista").appendChild(divTexto);//poner textarea dentro de mostrar
 
 		var boton = document.createElement("button");//Se crea boton
@@ -28,7 +28,7 @@ function crearLista (){ //boton con evento click para cear lista
 			//boton agregar
 			var botonTareas = document.createElement("a");
 			botonTareas.setAttribute("href", "#");
-			var linkTareas = document.createTextNode("Agregar Tareas");
+			var linkTareas = document.createTextNode("Añadir una tarjeta");
 			botonTareas.appendChild(linkTareas);
 			tareasLista.appendChild(botonTareas);
 			botonTareas.onclick = function(){
@@ -46,7 +46,7 @@ function crearLista (){ //boton con evento click para cear lista
 				//boton agregar
 				var botonAgregarTarea = document.createElement("button");//Se crea boton
 				botonAgregarTarea.setAttribute("id", "otra-tarea");//se le asigna ID
-				botonAgregarTarea.innerText = "Agregar";//Texto del boton
+				botonAgregarTarea.innerText = "Añadir";//Texto del boton
 				document.getElementById("contlistado").appendChild(botonAgregarTarea);//se coloca boton dentro de contListado
 
 				var listaDeTareas = document.createElement("ul");//se crea lista desordenada
@@ -64,7 +64,7 @@ function crearLista (){ //boton con evento click para cear lista
 			}
  		}
 
-	boton.innerText = "Agregar";//texto que mostrara el boton
+	boton.innerText = "Guardar";//texto que mostrara el boton
 	document.getElementById("mostrar-lista").appendChild(boton);//Se indica donde se quiere agregar el boton creado
 	});
 }
