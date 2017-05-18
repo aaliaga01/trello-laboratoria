@@ -34,24 +34,34 @@ function crearLista (){ //boton con evento click para cear lista
 			botonTareas.onclick = function(){
 
 				//div contenedor caja de texto y boton para agregar lista
-				var divTareas = document.createElement("div");
-				divTareas.setAttribute("id", "contlistado");
-				tareasLista.appendChild(divTareas);
+				var divTareas = document.createElement("div");//Se crea div
+				divTareas.setAttribute("id", "contlistado");//se le asigna ID
+				tareasLista.appendChild(divTareas);//se coloca dentro de divTareas
 
 				//Caja de texto
-				var cajaTareas = document.createElement("textarea");
-				cajaTareas.setAttribute("id", "ingresaTareas");
-				divTareas.appendChild(cajaTareas);
+				var cajaTareas = document.createElement("textarea");//se crea caja de texto
+				cajaTareas.setAttribute("id", "ingresaTareas");//Se le da un ID
+				divTareas.appendChild(cajaTareas);//se coloca dentro de divTareas
 
 				//boton agregar
-				var botonAgregarTarea = document.createElement("button");
-				botonAgregarTarea.setAttribute("id", "otra-tarea");
-				botonAgregarTarea.innerText = "Agregar"
-				document.getElementById("contlistado").appendChild(botonAgregarTarea);
-				botonAgregarTarea.onclick = function(){
-					alert("tarea!");
+				var botonAgregarTarea = document.createElement("button");//Se crea boton
+				botonAgregarTarea.setAttribute("id", "otra-tarea");//se le asigna ID
+				botonAgregarTarea.innerText = "Agregar";//Texto del boton
+				document.getElementById("contlistado").appendChild(botonAgregarTarea);//se coloca boton dentro de contListado
+
+				var listaDeTareas = document.createElement("ul");//se crea lista desordenada
+				tareasLista.appendChild(listaDeTareas);//se coloca dentro de tareasLista
+
+				botonAgregarTarea.onclick = function(){//esto pasa a agregar tarea
+					
+					//crea lista de tareas
+					var tareaIng = document.getElementById("ingresaTareas").value;//toma el valor ingresado
+					var tareaNueva = document.createElement("li");//crea un li por cada nueva tarea ingresada
+					var tareaTexto = document.createTextNode(tareaIng);//crea un nodo texto para mostrar valor ingresado
+					tareaNueva.appendChild(tareaTexto);//coloca el texto dentro de Li
+					listaDeTareas.appendChild(tareaNueva);//coloca Li dentro de Ul
 				}
-				}
+			}
  		}
 
 	boton.innerText = "Agregar";//texto que mostrara el boton
@@ -59,3 +69,4 @@ function crearLista (){ //boton con evento click para cear lista
 	});
 }
 crearLista();//NO OLVIDAR LLAMAR A LA FUNCIOOOOON!!!
+//PD: Funciona solo una vez... pero al menos funciona, he avanzado algo XD
